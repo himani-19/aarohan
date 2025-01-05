@@ -1,0 +1,244 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site2.master.cs" Inherits="Project_UI.Site2" %>
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Aarohan</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="Content/Custom/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Custom/fontawesome.css" rel="stylesheet" />
+    <link href="Content/Custom/lightbox.css" rel="stylesheet" />
+    <link href="Content/Custom/flex-slider.css" rel="stylesheet" />
+    <link href="Content/Custom/owl.css" rel="stylesheet" />
+    <link href="Content/Custom/templatemo-eduwell-style.css" rel="stylesheet" />
+    <link href="Content/Custom/legal-advice.css" rel="stylesheet" />
+    <link href="Content/Custom/card.css" rel="stylesheet" />
+    <link href="Content/Custom/lawyer_card.css" rel="stylesheet" />
+    <!--
+
+TemplateMo 573 EduWell
+
+https://templatemo.com/tm-573-eduwell
+
+-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header class="header-area header-sticky">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="main-nav">
+                                <!-- ***** Logo Start ***** -->
+                                <a href="home.aspx" class="logo" style="position: relative">
+                                    <%--<img src="Images/1.png" alt="aarohan-logo" style="position: inherit; z-index: 3; height: 70px; width: 70px; max-width: 100%; max-height: 100%" />--%>
+                                    <%--<img src="assets/images/templatemo-eduwell.png" alt="EduWell Template">--%>
+                                    <img src="Images/AArohan_3_-removebg-preview.png" style="position: inherit; z-index: 3; width: 150px; max-width: 100%; max-height: 100%; margin-top: -20px" id="logo-img" />
+                                </a>
+                                <!-- ***** Logo End ***** -->
+                                <!-- ***** Menu Start ***** -->
+                                <ul class="nav">
+                                    <li class="scroll-to-section"><a href="home.aspx" class="active">Home</a></li>
+                                    <li class="scroll-to-section"><a href="category.aspx">Browse Category</a></li>
+                                    <li class="scroll-to-section"><a href="Advocate_Details.aspx">Find a lawyer</a></li>
+
+                                    <li class="scroll-to-section"><a href="ViewAllPosts.aspx">Forum</a></li>
+                                    <li class="scroll-to-section"><a href="#contact-section">Contact Us</a></li>
+                                    <li class="has-sub">
+                                        <a href="javascript:void(0)">Profile
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <%if (Session["user"] == null)
+                                                {
+
+
+                                            %>
+                                            <li><a href="LoginPage.aspx">Login</a></li>
+                                            <li><a href="User_Register.aspx">Register</a></li>
+                                            <%
+                                                }
+                                                else
+                                                {
+                                            %>
+                                            <li><a href="AddPost.aspx">Write Post</a></li>
+                                            <li><a href="Logout.aspx">Logout</a></li>
+                                            <%
+                                            }%>
+
+
+                                            <%--<li><a href="contact-us.html">Contact Us</a></li>--%>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <a class='menu-trigger'>
+                                    <span>Menu</span>
+                                </a>
+                                <!-- ***** Menu End ***** -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <section class="contact-us" id="contact-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div id="map">
+
+                                <!-- You just need to go to Google Maps for your own map point, and copy the embed code from Share -> Embed a map section -->
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7151.84524236698!2d-122.19494600413192!3d47.56605883252286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490695e625f8965%3A0xf99b055e76477def!2sNewcastle%20Beach%20Park%20Playground%2C%20Bellevue%2C%20WA%2098006%2C%20USA!5e0!3m2!1sen!2sth!4v1644335269264!5m2!1sen!2sth" width="100%" height="420px" frameborder="0" style="border: 0; border-radius: 15px; position: relative; z-index: 2;" allowfullscreen=""></iframe>
+                                <div class="row">
+                                    <div class="col-lg-4 offset-lg-1">
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <h4>Phone</h4>
+                                            <span>010-020-0340</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="contact-info">
+                                            <div class="icon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <h4>Mobile</h4>
+                                            <span>090-080-0760</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <%--<form id="contact" action="" method="post">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="section-heading">
+                                            <h6>Contact us</h6>
+                                            <h4>Still have a Query?</h4>
+                                            <p>Feel free to reach out.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input type="name" name="name" id="name" placeholder="Full Name" autocomplete="on" required>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="main-gradient-button">Send Message</button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </form>--%>
+                        </div>
+                        <div class="col-lg-12">
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="copyright">
+                                Copyright © Aarohan. All Rights Reserved. 
+      
+      <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </form>
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="Scripts/Custom/jquery.min.js"></script>
+    <%--<script src="vendor/jquery/jquery.min.js"></script>--%>
+    <script src="Scripts/Custom/bootstrap.min.js"></script>
+    <%--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>--%>
+
+    <script src="Scripts/Custom/isotope.min.js"></script>
+    <script src="Scripts/Custom/owl-carousel.js"></script>
+    <script src="Scripts/Custom/lightbox.js"></script>
+    <script src="Scripts/Custom/tabs.js"></script>
+    <script src="Scripts/Custom/video.js"></script>
+    <script src="Scripts/Custom/slick-slider.js"></script>
+    <script src="Scripts/Custom/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+            var
+                direction = section.replace(/#/, ''),
+                reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                reqSectionPos = reqSection.offset().top - 0;
+
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos
+                },
+                    800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
+
+        };
+
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                    $this = $(this),
+                    topEdge = $this.offset().top - 80,
+                    bottomEdge = topEdge + $this.height(),
+                    wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                        currentId = $this.data('section'),
+                        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                    reqLink.closest('li').addClass('active').
+                        siblings().removeClass('active');
+                }
+            });
+        };
+
+        $('.main-menu, .responsive-menu ').on('click', 'a', function (e) {
+            e.preventDefault();
+            showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+            checkSection();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSiteMaster.master.cs" Inherits="Project_UI.Admin.AdminSiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            
+            
+        }
+
+        header {
+            background: linear-gradient(-145deg, rgba(219,138,222,1) 0%, rgba(246,191,159,1) 100%);
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            margin-left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-bar {
+            margin-right: 20px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background-color: #ff9f9f;
+            border-color: white;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 220px;
+            background: rgb(219,138,222);
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #f6bf9f;
+            color: black;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            margin-left: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: rgba(33, 33, 33, 0.9);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="logo">Admin Panel</div>
+            <div class="nav-bar">
+                <a href="../home.aspx" onclick="Logout_click">Logout</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="sidebar">
+                <a href="AdminDashboard.aspx">Dashboard</a>
+                <a href="ManageUser.aspx">Manage Users</a>
+                <a href="ManageAdvocates.aspx">Manage Advocates</a>
+                <a href="ManageCategories.aspx">Manage Categories</a>
+            </div>
+
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Admin Panel. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>
